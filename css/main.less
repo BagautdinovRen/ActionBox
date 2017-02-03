@@ -1,0 +1,369 @@
+/*============= Шрифты ===========================*/
+
+@font-face {
+	font-family: "RalewayBold";
+	src: url("../fonts/RalewayBold/RalewayBold.eot");
+	src: url("../fonts/RalewayBold/RalewayBold.eot?#iefix") format("embedded-opentype"),
+			 url("../fonts/RalewayBold/RalewayBold.woff") format("woff"),
+			 url("../fonts/RalewayBold/RalewayBold.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "RalewayRegular";
+	src: url("../fonts/RalewayRegular/RalewayRegular.eot");
+	src: url("../fonts/RalewayRegular/RalewayRegular.eot?#iefix") format("embedded-opentype"),
+			 url("../fonts/RalewayRegular/RalewayRegular.woff") format("woff"),
+			 url("../fonts/RalewayRegular/RalewayRegular.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+
+.rale_reg{
+	font-family: "RalewayRegular";
+}
+
+.rale_bold{
+	font-family: "RalewayBold";
+}
+
+/*=====================  Variables ==========================*/
+
+.cover{
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+
+.flex{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+
+/*=============== Colors =========================*/
+
+@nav_color: #2a2e48;
+@main_button_color: #e84545;
+@white: #fff;
+@black: #000;
+@gray: #e1e1e1;
+@gray_emp: #6c7279;
+@gray_soc_btn: #c6cacc;
+@red: #e84545;
+@wrap_color: rgba(232,69,69,.7);
+@transparent: transparent;
+@blue: #3a3e64;
+@footer_text: #9d9fb2;
+@copyright_background: #313454;
+
+/*======================= MAIN SETTINGS =====================*/
+
+body{
+	.rale_reg;
+	font-size: 16px;
+	min-width: 320px;
+}
+
+.p0{
+	padding: 0;
+}
+
+button, input, a{
+	&:focus{
+		outline: none;
+	}
+}
+
+/*==================== BUTTONS ========================*/
+
+.common_button{
+	background-color: @main_button_color;
+	border: none;
+	text-transform: uppercase;
+	color: @white;
+}
+
+.looking_button{
+	.common_button;
+	padding: 10px 30px;
+}
+
+.download_button{
+	.common_button;
+	padding: 12px 50px;
+}
+
+.soc_btn{
+	background: @transparent;
+	border: 1px solid @gray_soc_btn;
+	height: 30px;
+	width: 30px;
+}
+
+.soc_btn_white{
+	.soc_btn;
+	color: @white;	
+}
+
+.soc_btn_gray{
+	.soc_btn;
+	color: @gray_soc_btn;
+}
+
+.callback_button{
+	position: fixed;
+	bottom: 5px;
+	right: 20px;
+	color: @white;
+	background-color: @red;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	text-align: center;
+	font-size: 28px;
+	z-index: 1000;
+
+	&:hover, &:focus{
+		color: @white;
+		text-decoration: none;
+	}
+}
+
+/*========================== HEADER =========================*/
+
+header{
+	background: url(../img/banner.jpg);
+	.cover;
+	height: 680px;
+}
+
+nav{
+	height: 94px;
+	line-height: 94px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 999;
+}
+
+.top_menu{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+
+	li{
+		display: inline-block;
+		padding: 0 20px;
+
+		a{
+			color: #fff;
+			.rale_bold;
+			text-transform: uppercase;
+
+			&:hover, &:focus{
+				color: @gray;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+.separator{
+	background-color: @white;
+	height: 1px;	
+}
+
+.logo{
+	padding-top: 35px;
+}
+
+.title_block{
+	color: @white;
+	text-align: center;
+	margin-top: 200px;
+
+	h1{
+		.rale_bold;
+		font-size: 50px;
+		margin-bottom: 30px;
+	}
+
+	p{
+		font-size: 18px;
+		margin-bottom: 50px;
+	}
+}
+
+/* =============== CUSTOMIZE_SECTION ===================  */
+
+.customize{
+	padding: 100px 0;
+		
+	.custom_section{
+		text-align: center;	
+		margin-bottom: 50px;
+
+		.custom_img{
+			font-size: 50px;
+			color: @red;
+		}
+
+		h4{
+			text-transform: uppercase;
+			.rale_bold;
+		}
+
+		p{
+			.rale_reg;
+			font-size: 15px;
+		}
+	}
+}
+
+/* =============== PROJECTS_SECTION ===================  */
+.projects{
+
+	.project_section{
+		position: relative;
+
+		.project_wrap{
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 100%;
+			width: 100%;
+			background-color: @wrap_color;
+			opacity: 0;
+			.flex;
+			
+			.wrap_img{
+				color: @white;
+				text-align: center;
+				margin: auto;
+
+				h4{
+					text-transform: uppercase;
+					.rale_bold;
+				}
+
+				p{
+					.rale_reg;
+				}
+			}
+		}
+
+		&:hover .project_wrap{
+			opacity: 1;
+			cursor: pointer;
+		}
+	}
+}
+
+/* =============== EMPLOYEES_SECTION ===================  */
+
+.employees{
+	padding-top: 90px;
+
+	.employee{
+
+		margin-bottom: 20px;
+
+		h4{
+			.rale_bold;
+		}
+
+		span{
+			color: @red;
+			font-size: 14px;
+		}
+
+		p{
+			.rale_reg;
+			font-size: 14px;
+			padding-top: 10px;
+			color: @gray_emp;
+		}
+	}
+}
+
+
+/* =============== DOWNLOAD_SECTION ===================  */
+
+.download{
+	padding: 70px 0;
+
+	.download_section{
+		text-align: center;
+
+		h3{
+			.rale_bold;
+		}
+
+		p{
+			.rale_reg;
+			font-size: 15px;
+			margin-bottom: 25px;
+		}
+	}
+}
+
+/* =============== FOOTER_SECTION ===================  */
+
+.location_footer{
+	background-color: @blue;
+	color: @white;
+	padding: 50px 0 30px 0;
+
+	.footer_block{
+		text-align: center;
+		margin-bottom: 30px;
+		h5{
+			.rale_bold;
+			font-size: 13px;
+			text-transform: uppercase;
+			margin-bottom: 15px;
+		}
+
+		p{
+			color: @footer_text;
+			.rale_reg;
+			font-size: 14px;
+			margin: 2px;
+		}
+	}
+}
+
+.copyright_footer{
+	padding: 15px 0;
+	background-color: @copyright_background;
+
+	.copyright_section{
+		text-align: center;
+		font-size: 13px;
+
+		p{
+			margin: 0;
+			color: @footer_text;
+		}
+
+		i{
+			color: @red;
+		}
+
+		span{
+			color: @white;
+		}
+	}
+}
+
+/* ====================== MODALS ============================== */
+
+#downloadForm{
+	input{
+		margin-bottom: 15px;
+	}
+}
